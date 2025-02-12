@@ -15,7 +15,7 @@ sudo mount /dev/mmcblk1p1 /sdcard
 cd /sdcard/   
 sudo mkdir fol  
 
-# 4._Move your docker folder on your sdcard and link  
+# 4.Move your docker folder on your sdcard and link  
 sudo mv /var/lib/docker /sdcard/fol/  
 sudo ln -s /sdcard/fol/docker /var/lib/docker  
   
