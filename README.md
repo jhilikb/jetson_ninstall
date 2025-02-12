@@ -40,7 +40,20 @@ sudo cp gpu_ready/csvs/*               /etc/nvidia-container-runtime/host-files-
 # 9. Now set the tensorrt files  
 
 sudo cp  gpu_ready/tensorrtfiles/incaarch64/*  /usr/include/aarch64-linux-gnu/  
-sudo cp  gpu_ready/tensorrtfiles/libaarch64/*  /usr/lib/aarch64-linux-gnu/  
+sudo cp  gpu_ready/tensorrtfiles/libaarch64/*  /usr/lib/aarch64-linux-gnu/ 
+
+cd /usr/lib/aarch64-linux-gnu/  
+sudo ln -sf libnvinfer_plugin.so.8.0.1 libnvinfer_plugin.so   
+sudo ln -sf libnvinfer_plugin.so.8.0.1 libnvinfer_plugin.so.8  
+sudo ln -sf libnvinfer.so.8.0.1 libnvinfer.so  
+sudo ln -sf libnvinfer.so.8.0.1 libnvinfer.so.8  
+sudo ln -sf libnvonnxparser.so.8.0.1 libnvonnxparser.so  
+sudo ln -sf libnvonnxparser.so.8.0.1 libnvonnxparser.so.8  
+sudo ln -sf libnvparsers.so.8.0.1 libnvparsers.so  
+sudo ln -sf libnvparsers.so.8.0.1 libnvparsers.so.8  
+  
+cd $fol  
+  
 sudo cp  -r gpu_ready/tensorrtfiles/pyddist/*   /usr/lib/python3.6/dist-packages/  
 sudo cp  -r  gpu_ready/tensorrtfiles/tensorrt   /usr/src/  
 
