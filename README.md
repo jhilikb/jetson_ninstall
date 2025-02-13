@@ -1,7 +1,7 @@
 # jetson_ninstall
 Install cuda related stuff in jetson nano
 
-# 1.You have to insert your sdcard and check partition name..use the following  
+# 1.You have to insert your sdcard while your system is off then switch on and check partition name..use the following  
   
 sudo fdisk -l  
 lsblk -f  
@@ -9,7 +9,9 @@ lsblk -f
 # 2. Create partition on your sdcard
 sudo mkfs -t ext4 /dev/mmcblk1p1
 
-# 3. Mount your sdcard and cd in it  
+# 3. Mount your sdcard and cd in it   
+sudo cd /  
+sudo mkdir sdcard  
 sudo mount /dev/mmcblk1p1 /sdcard
   
 cd /sdcard/   
@@ -34,6 +36,10 @@ sudo cp gpu_ready/nvidia_runtime/libnvsample_cudaprocess.so      /usr/lib/aarch6
 sudo cp gpu_ready/nvidia_runtime/nvidia-container-*  /usr/bin/  
 sudo cp gpu_ready/nvidia_runtime/daemon.json      /etc/docker/daemon.json  
 sudo cp gpu_ready/csvs/*               /etc/nvidia-container-runtime/host-files-for-container.d/  
+
+sudo pkill -SIGHUP dockerd  
+sudo systemctl start docker  
+  
 
 # 8. Download contents into your gpu_ready/tensorrtfiles folder following directions given in gpu_ready/tensorrtfiles/download file
   
