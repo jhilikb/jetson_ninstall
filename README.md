@@ -10,7 +10,7 @@ lsblk -f
 sudo mkfs -t ext4 /dev/mmcblk1p1
 
 # 3. Mount your sdcard and cd in it   
-sudo cd /  
+cd /  
 sudo mkdir sdcard  
 sudo mount /dev/mmcblk1p1 /sdcard
   
