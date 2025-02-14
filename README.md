@@ -40,7 +40,8 @@ cd /usr/bin
 sudo chmod 755 nvidia-container-cli  
 sudo chmod 755 nvidia-container-runtime  
 sudo chmod 755 nvidia-container-runtime-hook  
-sudo chmod 755 nvidia-container-toolkit    
+sudo chmod 755 nvidia-container-toolkit  
+sudo cp gpu_ready/nvidia_runtime/config.toml /etc/nvidia-container-runtime/host-files-for-container.d/  
 
 
 sudo pkill -SIGHUP dockerd  
