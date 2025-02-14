@@ -32,6 +32,9 @@ cd $fol
 # 7. Set your nvidia runtime  
 
 sudo cp  gpu_ready/nvidia_runtime/libnvidia-container.so.0.10.0    /usr/lib/aarch64-linux-gnu/  
+cd /usr/lib/aarch64-linux-gnu  
+sudo ln -s libnvidia-container.so.0.10.0 libnvidia-container.so.0  
+cd $fol  
 sudo cp gpu_ready/nvidia_runtime/libnvsample_cudaprocess.so      /usr/lib/aarch64-linux-gnu/  
 sudo cp gpu_ready/nvidia_runtime/nvidia-container-*  /usr/bin/  
 sudo cp gpu_ready/nvidia_runtime/daemon.json      /etc/docker/daemon.json  
@@ -41,6 +44,7 @@ sudo chmod 755 nvidia-container-cli
 sudo chmod 755 nvidia-container-runtime  
 sudo chmod 755 nvidia-container-runtime-hook  
 sudo chmod 755 nvidia-container-toolkit  
+cd $fol  
 sudo cp gpu_ready/nvidia_runtime/config.toml /etc/nvidia-container-runtime/host-files-for-container.d/  
 
 
