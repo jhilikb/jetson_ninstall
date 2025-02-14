@@ -36,6 +36,12 @@ sudo cp gpu_ready/nvidia_runtime/libnvsample_cudaprocess.so      /usr/lib/aarch6
 sudo cp gpu_ready/nvidia_runtime/nvidia-container-*  /usr/bin/  
 sudo cp gpu_ready/nvidia_runtime/daemon.json      /etc/docker/daemon.json  
 sudo cp gpu_ready/csvs/*               /etc/nvidia-container-runtime/host-files-for-container.d/  
+cd /usr/bin  
+sudo chmod 755 nvidia-container-cli  
+sudo chmod 755 nvidia-container-runtime  
+sudo chmod 755 nvidia-container-runtime-hook  
+sudo chmod 755 nvidia-container-toolkit    
+
 
 sudo pkill -SIGHUP dockerd  
 sudo systemctl start docker  
